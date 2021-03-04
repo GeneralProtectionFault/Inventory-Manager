@@ -1,0 +1,52 @@
+﻿<Window x:Class="Inventory_Manager.Windows.ModifyPartWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Inventory_Manager.Windows"
+        mc:Ignorable="d"
+        Title="Modify Part" Height="670" Width="785" Loaded="Window_Loaded" Closing="Window_Closing">
+    <Grid>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="Black" Offset="0"/>
+                <GradientStop Color="#FF00A4BD" Offset="1"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <GroupBox x:Name="grpButtons" Header="Part Type" Margin="13,57,7,504" Foreground="White"/>
+        <RadioButton x:Name="radModifyPartInhouse" Content="In-House" HorizontalAlignment="Left" Margin="133,92,0,0" VerticalAlignment="Top" Foreground="White" FontSize="15" Click="radModifyPartInhouse_Click"/>
+        <RadioButton x:Name="radModifyPartOutsourced" Content="Outsourced" HorizontalAlignment="Right" Margin="0,92,129,0" VerticalAlignment="Top" Foreground="White" FontSize="15" Click="radModifyPartOutsourced_Click"/>
+        <TextBlock x:Name="txtModifyPartID" HorizontalAlignment="Left" Margin="199,174,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="32" Width="310" Foreground="White" FontSize="18"/>
+        <Label x:Name="lblModifyPartID" HorizontalContentAlignment="Right" Content="ID" HorizontalAlignment="Left" Margin="13,171,0,0" VerticalAlignment="Top" Foreground="White" FontSize="16" Height="35" Width="160"/>
+        <Label x:Name="lblModifyPartName" HorizontalContentAlignment="Right" Content="Name" HorizontalAlignment="Left" Margin="13,234,0,0" VerticalAlignment="Top" Foreground="White" FontSize="16" Height="35" Width="160"/>
+        <Label x:Name="lblModifyPartInventory" HorizontalContentAlignment="Right" Content="Inventory" HorizontalAlignment="Left" Margin="13,295,0,0" VerticalAlignment="Top" Foreground="White" FontSize="16" Height="35" Width="160"/>
+        <Label x:Name="lblModifyPartPrice" HorizontalContentAlignment="Right" Content="Price" HorizontalAlignment="Left" Margin="13,357,0,0" VerticalAlignment="Top" Foreground="White" FontSize="16" Height="35" Width="160"/>
+        <Label x:Name="lblModifyPartMax" HorizontalContentAlignment="Right" Content="Max" HorizontalAlignment="Right" Margin="0,419,341,0" VerticalAlignment="Top" Foreground="White" FontSize="16" Height="36" Width="80"/>
+        <Label x:Name="lblModifyPartMin" HorizontalContentAlignment="Right" Content="Min" HorizontalAlignment="Left" Margin="45,418,0,0" VerticalAlignment="Top" Foreground="White" FontSize="16" Height="34" Width="128"/>
+        <Label x:Name="lblModifyPartMachine_Company" HorizontalContentAlignment="Right" Content="Machine ID" HorizontalAlignment="Left" Margin="13,473,0,0" VerticalAlignment="Top" Foreground="White" FontSize="16" Height="34" Width="160"/>
+        <TextBox x:Name="txtModifyPartName" HorizontalAlignment="Left" Margin="199,234,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="234" Height="32" FontSize="16"/>
+        <TextBox x:Name="txtModifyPartInventory" HorizontalAlignment="Left" Margin="199,298,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="234" Height="32" FontSize="16"/>
+        <TextBox x:Name="txtModifyPartPrice" HorizontalAlignment="Left" Margin="199,357,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="234" Height="32" FontSize="16"/>
+        <TextBox x:Name="txtModifyPartMax" HorizontalAlignment="Right" Margin="0,421,164,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="153" Height="32" FontSize="16"/>
+        <TextBox x:Name="txtModifyPartMin" HorizontalAlignment="Left" Margin="199,420,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="148" Height="32" FontSize="16"/>
+        <TextBox x:Name="txtModifyPartMachine_Company" HorizontalAlignment="Left" Margin="199,473,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="234" Height="32" FontSize="16"/>
+        <Button x:Name="btnModifyPartSave" Content="Save" HorizontalAlignment="Right" Margin="0,0,230,10" VerticalAlignment="Bottom" Height="33" Width="104" Foreground="White" Click="btnModifyPartSave_Click">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="#FF5DFF00" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <Button x:Name="btnModifyPartCancel" Content="Cancel" HorizontalAlignment="Right" Margin="0,0,96,10" VerticalAlignment="Bottom" Height="33" Width="104" Foreground="White" Click="btnModifyPartCancel_Click">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="#FFD100FF" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <Label x:Name="lblModPartTitle" Content="Inventory Manager" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top" Foreground="White" FontSize="20"/>
+
+    </Grid>
+</Window>

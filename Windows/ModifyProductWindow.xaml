@@ -1,0 +1,76 @@
+﻿<Window x:Class="Inventory_Manager.Windows.ModifyProductWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Inventory_Manager.Windows"
+        mc:Ignorable="d"
+        Title="Modify Product" Height="582" Width="899" Closing="Window_Closing" Loaded="Window_Loaded">
+    <Grid>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="Black"/>
+                <GradientStop Color="#FF3F004D" Offset="1"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <Label Content="ID" HorizontalAlignment="Left" HorizontalContentAlignment="Right" Margin="36,140,0,0" VerticalAlignment="Top" Foreground="White" FontSize="16" Width="93" Height="31"/>
+        <DataGrid x:Name="dataModCandidateParts" ItemsSource="{Binding AllParts}" HorizontalAlignment="Left" Margin="460,130,0,283" Width="415"/>
+        <DataGrid x:Name="dataModAssignedParts" ItemsSource="{Binding AssociatedParts}" HorizontalAlignment="Left" Margin="460,371,0,53" Width="415"/>
+        <Label x:Name="lblModifyProductName" Content="Name" HorizontalAlignment="Left" HorizontalContentAlignment="Right" Margin="36,192,0,0" VerticalAlignment="Top" Foreground="White" FontSize="16" Width="93" Height="31"/>
+        <Label x:Name="lblModifyProductInventory" Content="Inventory" HorizontalAlignment="Left" HorizontalContentAlignment="Right" Margin="36,242,0,0" VerticalAlignment="Top" Foreground="White" FontSize="16" Width="93" Height="31"/>
+        <Label x:Name="lblModifyProductPrice" Content="Price" HorizontalAlignment="Left" HorizontalContentAlignment="Right" Margin="36,295,0,0" VerticalAlignment="Top" Foreground="White" FontSize="16" Width="93" Height="31"/>
+        <Label x:Name="lblModifyProductMin" Content="Min" HorizontalAlignment="Left" HorizontalContentAlignment="Right" Margin="36,345,0,0" VerticalAlignment="Top" Foreground="White" FontSize="16" Width="62" Height="31"/>
+        <Label x:Name="lblModifyProductMax" Content="Max" HorizontalAlignment="Left" HorizontalContentAlignment="Right" Margin="216,345,0,0" VerticalAlignment="Top" Foreground="White" FontSize="16" Width="62" Height="31"/>
+        <TextBlock x:Name="txtModifyProductID" HorizontalAlignment="Left" Margin="170,140,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="31" Width="186" Foreground="White" FontSize="16"/>
+        <TextBox x:Name="txtModifyProductName" HorizontalAlignment="Left" Margin="170,192,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="186" Height="31" FontSize="16"/>
+        <TextBox x:Name="txtModifyProductInventory" HorizontalAlignment="Left" Margin="170,242,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="186" Height="31" FontSize="16"/>
+        <TextBox x:Name="txtModifyProductPrice" HorizontalAlignment="Left" Margin="170,295,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="186" Height="31" FontSize="16"/>
+        <TextBox x:Name="txtModifyProductMin" HorizontalAlignment="Left" Margin="112,345,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="99" Height="31" FontSize="16"/>
+        <TextBox x:Name="txtModifyProductMax" HorizontalAlignment="Left" Margin="295,345,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="99" Height="31" FontSize="16"/>
+        <Button x:Name="btnModifyProductSave" Content="Save" HorizontalAlignment="Right" Margin="0,0,179,10" VerticalAlignment="Bottom" Height="33" Width="104" Foreground="White" Click="btnModifyProductSave_Click">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="#FF5DFF00" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <Button x:Name="btnModifyProductCancel" Content="Cancel" HorizontalAlignment="Right" Margin="0,0,24,10" VerticalAlignment="Bottom" Height="33" Width="104" Foreground="White" Click="btnModifyProductCancel_Click">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="#FFD100FF" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <Button x:Name="btnModifyProductDelete" Content="Delete" HorizontalAlignment="Right" Margin="0,0,335,10" VerticalAlignment="Bottom" Height="33" Width="104" Foreground="White" Click="btnModifyProductDelete_Click">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="#FFFF2300" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <Label x:Name="lblModifyProductAssoc_Parts" Content="Parts Associated w/ Product:" HorizontalAlignment="Right" HorizontalContentAlignment="Left" Margin="0,335,24,0" VerticalAlignment="Top" Foreground="White" FontSize="16" Width="415" Height="31"/>
+        <Label x:Name="lblModifyProductParts" Content="Candidate Parts:" HorizontalAlignment="Right" HorizontalContentAlignment="Left" Margin="0,94,24,0" VerticalAlignment="Top" Foreground="White" FontSize="16" Width="415" Height="31"/>
+        <Button x:Name="btnModifyProductAddPart" Content="Add" HorizontalAlignment="Right" Margin="0,0,335,238" VerticalAlignment="Bottom" Height="33" Width="104" Foreground="White" Click="btnModifyProductAddPart_Click">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="#FF00739E" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <TextBox x:Name="txtModifyProductSearch" HorizontalAlignment="Left" Margin="170,97,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="224" Height="31" FontSize="16"/>
+        <Button x:Name="btnModifyProductSearchParts" Content="Search Parts" HorizontalAlignment="Left" Margin="24,95,0,0" VerticalAlignment="Top" Height="33" Width="138" Foreground="White" Click="btnModifyProductSearchParts_Click">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="#FF00739E" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <Label x:Name="lblModProductTitle" Content="Inventory Manager" HorizontalAlignment="Center" VerticalAlignment="Top" Foreground="White" FontSize="20" Margin="0,10,0,0"/>
+
+    </Grid>
+</Window>

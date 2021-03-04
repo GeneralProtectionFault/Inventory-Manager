@@ -1,0 +1,49 @@
+﻿<Window x:Class="Inventory_Manager.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Inventory_Manager"
+        mc:Ignorable="d"
+        Title="Main Screen
+        " Height="645" Width="1271">
+    <Grid>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="Black"/>
+                <GradientStop Color="#FF00FFC5" Offset="1"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <DataGrid x:Name="dataParts" Margin="32,194,711,105" ItemsSource="{Binding AllParts}" ColumnWidth="Auto" Loaded="dataParts_Loaded" />
+        <DataGrid x:Name="dataProducts" Margin="0,194,24,105" ItemsSource="{Binding Products}" HorizontalAlignment="Right" ColumnWidth="Auto"  AutoGeneratingColumn="dataProducts_AutoGeneratingColumn" Loaded="dataProducts_Loaded" Width="514"/>
+        <Button x:Name="btnAddPart" Content="Add" HorizontalAlignment="Left" Margin="304,0,0,64" VerticalAlignment="Bottom" Height="36" Width="82" Click="btnAddPart_Click"/>
+        <Button x:Name="btnModifyPart" Content="Modify" HorizontalAlignment="Left" Margin="391,0,0,64" VerticalAlignment="Bottom" Height="36" Width="82" Click="btnModifyPart_Click"/>
+        <Button x:Name="btnDeletePart" Content="Delete" HorizontalAlignment="Left" Margin="478,0,0,64" VerticalAlignment="Bottom" Height="36" Width="82" Click="btnDeletePart_Click"/>
+        <Button x:Name="btnAddProduct" Content="Add" HorizontalAlignment="Right" Margin="0,0,199,64" VerticalAlignment="Bottom" Height="36" Width="82" Click="btnAddProduct_Click"/>
+        <Button x:Name="btnModifyProduct" Content="Modify" HorizontalAlignment="Right" Margin="0,0,111,64" VerticalAlignment="Bottom" Height="36" Width="82" Click="btnModifyProduct_Click"/>
+        <Button x:Name="btnDeleteProduct" Content="Delete" HorizontalAlignment="Right" Margin="0,0,24,64" VerticalAlignment="Bottom" Height="36" Width="82" Click="btnDeleteProduct_Click"/>
+        <Label x:Name="lblParts" Content="Parts" HorizontalAlignment="Left" Margin="32,158,0,0" VerticalAlignment="Top" Foreground="White" Width="87" FontSize="16"/>
+        <Label x:Name="lblProducts" Content="Products" HorizontalAlignment="Right" Margin="0,158,450,0" VerticalAlignment="Top" Foreground="White" Width="88" FontSize="16"/>
+        <TextBox x:Name="txtPartSearch" HorizontalAlignment="Left" Margin="359,158,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="201" Height="25" FontSize="14"/>
+        <TextBox x:Name="txtProductSearch" HorizontalAlignment="Right" Margin="0,158,24,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="201" Height="25" FontSize="14"/>
+        <Button x:Name="btnPartSearch" Content="Search" HorizontalAlignment="Left" Margin="227,158,0,0" VerticalAlignment="Top" Height="23" Width="117" RenderTransformOrigin="0.536,-0.45" Click="btnPartSearch_Click">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF5CECDF"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <Button x:Name="btnProductSearch" Content="Search" HorizontalAlignment="Right" Margin="0,159,240,0" VerticalAlignment="Top" Height="23" Width="117" RenderTransformOrigin="0.536,-0.45" Click="btnProductSearch_Click">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF5CECDF"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <Label x:Name="lblTitle" Content="Inventory Manager" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top" Foreground="White" FontSize="48"/>
+        <Button x:Name="btnExit" Content="Exit" HorizontalAlignment="Right" Margin="0,0,24,10" VerticalAlignment="Bottom" Width="257" Height="30" Background="#FFFFE2B8" Click="btnExit_Click"/>
+
+    </Grid>
+</Window>
